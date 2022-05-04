@@ -16,16 +16,16 @@ from selenium.webdriver.common.keys import Keys
 
 def main():
     # 获取网页
-    fiction = input("请输入要下载的小说：")
-    link = get_url(fiction)  # 小说目录页链接
+    # fiction = input("请输入要下载的小说：")
+    # link = get_url(fiction)  # 小说目录页链接
     # 返回小说目录页链接为空
-    if not link:
-        print("没有要搜索的小说！！！")
-        return
-    numbers_fiction = int(input("请输入要下载的小说编号（如果没有，输入0退出程序）："))
-    if numbers_fiction == 0:
-        return
-    url_list, name_ = get_toc(link[numbers_fiction - 1])  # 获取每一章链接和小说名
+    # if not link:
+    #     print("没有要搜索的小说！！！")
+    #     return
+    # numbers_fiction = int(input("请输入要下载的小说编号（如果没有，输入0退出程序）："))
+    # if numbers_fiction == 0:
+    #     return
+    url_list, name_ = get_toc("the url")  # 获取每一章链接和小说名
     os.makedirs('《' + name_ + '》', exist_ok=True)  # 创建文件夹
     pool = Pool(200)  # 创建进程池
     print('正在抓取' + '  ' + '《' + name_ + '》')
